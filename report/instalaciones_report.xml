@@ -1,0 +1,26 @@
+<odoo>
+    <record id="odoo9.instalaciones_report" model="ir.actions.report">
+        <field name="name"> Informe de instalaciones</field>
+        <field name="model">odoo9.instalaciones</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo9.instalaciones_report_view</field>
+        <field name="report_file">odoo9.instalaciones_report</field>
+        <field name="binding_model_id" ref="model_odoo9_instalaciones"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="instalaciones_report_view">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <h1>Instalaciones </h1><br />
+                <t t-foreach="docs" t-as="instalaciones">
+                    <ul>
+                        <li>    Nombre: <span t-field="instalaciones.name" /></li>
+                        <li>    Lugar: <span t-field="instalaciones.lugar" /></li>
+                        <li>    Agencia: <span t-field="instalaciones.agencia_id" /></li>
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

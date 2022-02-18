@@ -1,0 +1,691 @@
+<odoo>
+  <data>
+    <!--Model 1-->
+
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="odoo9.director_list_view">
+      <field name="name">odoo9.director.view.tree</field>
+      <field name="model">odoo9.director</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="edad"/>
+          <field name="agencia_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.ui.view" id="odoo9.director_search_view">
+      <field name="name">odoo9.director.view.search</field>
+      <field name="model">odoo9.director</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="edad"/>
+          <field name="agencia_id"/>
+          <group>
+            <filter name="group_by_name" string="name" context="{'gropup_by':'name'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo9.director_form_view">
+      <field name="name">odoo9.director.view.form</field>
+      <field name="model">odoo9.director</field>
+      <field name="arch" type="xml">
+        <form string="Información director">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="Nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="edad" placeholder="Edad"/>
+                <field name="agencia_id" placeholder="Agencia"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo9.director_action_window">
+      <field name="name">Director</field>
+      <field name="res_model">odoo9.director</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <menuitem name="odoo9" id="odoo9.menu_root"/>
+    <menuitem name="Directores" id="odoo9.menu_director" parent="odoo9.menu_root"/>
+    <menuitem name="Lista" id="odoo9.menu_director_list" parent="odoo9.menu_director"
+              action="odoo9.director_action_window"/>
+
+<!--Model 2-->
+
+    <record model="ir.ui.view" id="odoo9.instalaciones_list_view">
+      <field name="name">odoo9.instalaciones.view.tree</field>
+      <field name="model">odoo9.instalaciones</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="lugar"/>
+          <field name="agencia_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.ui.view" id="odoo9.instalaciones_search_view">
+      <field name="name">odoo9.instalaciones.view.search</field>
+      <field name="model">odoo9.instalaciones</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="lugar"/>
+          <field name="agencia_id"/>
+          <group>
+            <filter name="group_by_name" string="name" context="{'gropup_by':'name'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo9.instalaciones_form_view">
+      <field name="name">odoo9.instalaciones.view.form</field>
+      <field name="model">odoo9.instalaciones</field>
+      <field name="arch" type="xml">
+        <form string="Información instalaciones">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="Nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="lugar" placeholder="Lugar"/>
+                <field name="agencia_id" placeholder="Agencia"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo9.instalaciones_action_window">
+      <field name="name">Instalaciones</field>
+      <field name="res_model">odoo9.instalaciones</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <menuitem name="odoo9" id="odoo9.menu_root"/>
+    <menuitem name="Instalaciones" id="odoo9.menu_instalaciones" parent="odoo9.menu_root"/>
+    <menuitem name="Lista" id="odoo9.menu_instalaciones_list" parent="odoo9.menu_instalaciones"
+              action="odoo9.instalaciones_action_window"/>
+
+    <!--Model 3-->
+
+    <record model="ir.ui.view" id="odoo9.robots_list_view">
+      <field name="name">odoo9.robots.view.tree</field>
+      <field name="model">odoo9.robots</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nave_id"/>
+          <field name="fabricacion_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.ui.view" id="odoo9.robots_search_view">
+      <field name="name">odoo9.robots.view.search</field>
+      <field name="model">odoo9.robots</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nave_id"/>
+          <field name="fabricacion_id"/>
+          <group>
+            <filter name="group_by_name" string="name" context="{'gropup_by':'name'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo9.robots_form_view">
+      <field name="name">odoo9.robots.view.form</field>
+      <field name="model">odoo9.robots</field>
+      <field name="arch" type="xml">
+        <form string="Información robots">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="Nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nave_id" placeholder="Nave"/>
+                <field name="fabricacion_id" placeholder="Fabricacion"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo9.robots_action_window">
+      <field name="name">Robots</field>
+      <field name="res_model">odoo9.robots</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <menuitem name="odoo9" id="odoo9.menu_root"/>
+    <menuitem name="Robots" id="odoo9.menu_robots" parent="odoo9.menu_root"/>
+    <menuitem name="Lista" id="odoo9.menu_robots_list" parent="odoo9.menu_robots"
+              action="odoo9.robots_action_window"/>
+
+    <!--Model 4-->
+
+    <record model="ir.ui.view" id="odoo9.naves_list_view">
+      <field name="name">odoo9.naves.view.tree</field>
+      <field name="model">odoo9.naves</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="robots_id"/>
+          <field name="misiones_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.ui.view" id="odoo9.naves_search_view">
+      <field name="name">odoo9.naves.view.search</field>
+      <field name="model">odoo9.naves</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="robots_id"/>
+          <field name="misiones_id"/>
+          <group>
+            <filter name="group_by_name" string="name" context="{'gropup_by':'name'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo9.naves_form_view">
+      <field name="name">odoo9.naves.view.form</field>
+      <field name="model">odoo9.naves</field>
+      <field name="arch" type="xml">
+        <form string="Información naves">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="Nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="robots_id" placeholder="Robots"/>
+                <field name="misiones_id" placeholder="Misiones"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo9.naves_action_window">
+      <field name="name">Naves</field>
+      <field name="res_model">odoo9.naves</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <menuitem name="odoo9" id="odoo9.menu_root"/>
+    <menuitem name="Naves" id="odoo9.menu_naves" parent="odoo9.menu_root"/>
+    <menuitem name="Lista" id="odoo9.menu_naves_list" parent="odoo9.menu_naves"
+              action="odoo9.naves_action_window"/>
+
+
+    <!--Model 5-->
+
+    <record model="ir.ui.view" id="odoo9.astronautas_list_view">
+      <field name="name">odoo9.astronautas.view.tree</field>
+      <field name="model">odoo9.astronautas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="edad"/>
+          <field name="misiones_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.ui.view" id="odoo9.astronautas_search_view">
+      <field name="name">odoo9.astronautas.view.search</field>
+      <field name="model">odoo9.astronautas</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="edad"/>
+          <field name="misiones_id"/>
+          <group>
+            <filter name="group_by_name" string="name" context="{'gropup_by':'name'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo9.astronautas_form_view">
+      <field name="name">odoo9.astronautas.view.form</field>
+      <field name="model">odoo9.astronautas</field>
+      <field name="arch" type="xml">
+        <form string="Información astronautas">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="Nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="edad" placeholder="Edad"/>
+                <field name="misiones_id" placeholder="Misiones"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo9.astronautas_action_window">
+      <field name="name">Astronautas</field>
+      <field name="res_model">odoo9.astronautas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <menuitem name="odoo9" id="odoo9.menu_root"/>
+    <menuitem name="Astronautas" id="odoo9.menu_astronautas" parent="odoo9.menu_root"/>
+    <menuitem name="Lista" id="odoo9.menu_astronautas_list" parent="odoo9.menu_astronautas"
+              action="odoo9.astronautas_action_window"/>
+
+
+    <!--Model 6-->
+
+    <record model="ir.ui.view" id="odoo9.planetas_list_view">
+      <field name="name">odoo9.planetas.view.tree</field>
+      <field name="model">odoo9.planetas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="misiones_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.ui.view" id="odoo9.planetas_search_view">
+      <field name="name">odoo9.planetas.view.search</field>
+      <field name="model">odoo9.planetas</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="misiones_id"/>
+          <group>
+            <filter name="group_by_name" string="name" context="{'gropup_by':'name'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo9.planetas_form_view">
+      <field name="name">odoo9.planetas.view.form</field>
+      <field name="model">odoo9.planetas</field>
+      <field name="arch" type="xml">
+        <form string="Información planetas">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="Nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="misiones_id" placeholder="Misiones"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo9.planetas_action_window">
+      <field name="name">Planetas</field>
+      <field name="res_model">odoo9.planetas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <menuitem name="odoo9" id="odoo9.menu_root"/>
+    <menuitem name="Planetas" id="odoo9.menu_planetas" parent="odoo9.menu_root"/>
+    <menuitem name="Lista" id="odoo9.menu_planetas_list" parent="odoo9.menu_planetas"
+              action="odoo9.planetas_action_window"/>
+
+    <!--Model 7-->
+
+    <record model="ir.ui.view" id="odoo9.fabricacion_list_view">
+      <field name="name">odoo9.fabricacion.view.tree</field>
+      <field name="model">odoo9.fabricacion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="componentes"/>
+          <field name="robots_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.ui.view" id="odoo9.fabricacion_search_view">
+      <field name="name">odoo9.fabricacion.view.search</field>
+      <field name="model">odoo9.fabricacion</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="componentes"/>
+          <field name="robots_id"/>
+          <group>
+            <filter name="group_by_name" string="name" context="{'gropup_by':'name'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo9.fabricacion_form_view">
+      <field name="name">odoo9.fabricacion.view.form</field>
+      <field name="model">odoo9.fabricacion</field>
+      <field name="arch" type="xml">
+        <form string="Información fabricaciones">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="Nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="componentes" placeholder="Componentes"/>
+                <field name="robots_id" placeholder="Robots"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo9.fabricacion_action_window">
+      <field name="name">Fabricacion</field>
+      <field name="res_model">odoo9.fabricacion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <menuitem name="odoo9" id="odoo9.menu_root"/>
+    <menuitem name="Fabricaciones" id="odoo9.menu_fabricacion" parent="odoo9.menu_root"/>
+    <menuitem name="Lista" id="odoo9.menu_fabricacion_list" parent="odoo9.menu_fabricacion"
+              action="odoo9.fabricacion_action_window"/>
+    
+    <!--Model 8-->
+
+    <record model="ir.ui.view" id="odoo9.misiones_list_view">
+      <field name="name">odoo9.misiones.view.tree</field>
+      <field name="model">odoo9.misiones</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="naves_id"/>
+          <field name="astronautas_id"/>
+          <field name="planetas_id"/>
+          <field name="agencia_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.ui.view" id="odoo9.misiones_search_view">
+      <field name="name">odoo9.misiones.view.search</field>
+      <field name="model">odoo9.misiones</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="naves_id"/>
+          <field name="astronautas_id"/>
+          <field name="planetas_id"/>
+          <field name="agencia_id"/>
+          <group>
+            <filter name="group_by_name" string="name" context="{'gropup_by':'name'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo9.misiones_form_view">
+      <field name="name">odoo9.misiones.view.form</field>
+      <field name="model">odoo9.misiones</field>
+      <field name="arch" type="xml">
+        <form string="Información misiones">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="Nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="naves_id" placeholder="Naves"/>
+                <field name="astronautas_id" placeholder="Astronautas"/>
+                <field name="planetas_id" placeholder="Planetas"/>
+                <field name="agencia_id" placeholder="Agencia"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo9.misiones_action_window">
+      <field name="name">Misiones</field>
+      <field name="res_model">odoo9.misiones</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <menuitem name="odoo9" id="odoo9.menu_root"/>
+    <menuitem name="Misiones" id="odoo9.menu_misiones" parent="odoo9.menu_root"/>
+    <menuitem name="Lista" id="odoo9.menu_misiones_list" parent="odoo9.menu_misiones"
+              action="odoo9.misiones_action_window"/>
+
+     <!--Model 9-->
+
+    <record model="ir.ui.view" id="odoo9.agencia_list_view">
+      <field name="name">odoo9.agencia.view.tree</field>
+      <field name="model">odoo9.agencia</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="pais"/>
+          <field name="director_id"/>
+          <field name="instalaciones_id"/>
+          <field name="misiones_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.ui.view" id="odoo9.agencia_search_view">
+      <field name="name">odoo9.agencia.view.search</field>
+      <field name="model">odoo9.agencia</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="pais"/>
+          <field name="director_id"/>
+          <field name="instalaciones_id"/>
+          <field name="misiones_id"/>
+          <group>
+            <filter name="group_by_name" string="name" context="{'gropup_by':'name'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- form -->
+
+    <record model="ir.ui.view" id="odoo9.agencia_form_view">
+      <field name="name">odoo9.agencia.view.form</field>
+      <field name="model">odoo9.agencia</field>
+      <field name="arch" type="xml">
+        <form string="Información agencia">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                Nombre <field name="name" placeholder="Nombre"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="pais" placeholder="Pais"/>
+                <field name="director_id" placeholder="Director"/>
+                <field name="instalaciones_id" placeholder="Instalaciones"/>
+                <field name="misiones_id" placeholder="Misiones"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="odoo9.agencia_action_window">
+      <field name="name">Agencia</field>
+      <field name="res_model">odoo9.agencia</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <menuitem name="odoo9" id="odoo9.menu_root"/>
+    <menuitem name="Agencias" id="odoo9.menu_agencia" parent="odoo9.menu_root"/>
+    <menuitem name="Lista" id="odoo9.menu_agencia_list" parent="odoo9.menu_agencia"
+              action="odoo9.agencia_action_window"/>
+  </data>
+</odoo>

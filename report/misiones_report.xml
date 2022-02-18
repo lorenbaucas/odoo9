@@ -1,0 +1,28 @@
+<odoo>
+    <record id="odoo9.misiones_report" model="ir.actions.report">
+        <field name="name"> Informe de misiones</field>
+        <field name="model">odoo9.misiones</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo9.misiones_report_view</field>
+        <field name="report_file">odoo9.misiones_report</field>
+        <field name="binding_model_id" ref="model_odoo9_misiones"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="misiones_report_view">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <h1>Misiones </h1><br />
+                <t t-foreach="docs" t-as="misiones">
+                    <ul>
+                        <li>    Nombre: <span t-field="misiones.name" /></li>
+                        <li>    Naves: <span t-field="misiones.naves_id" /></li>
+                        <li>    Astronautas: <span t-field="misiones.astronautas_id" /></li>
+                        <li>    Planetas: <span t-field="misiones.planetas_id" /></li>
+                        <li>    Agencia: <span t-field="misiones.agencia_id" /></li>
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

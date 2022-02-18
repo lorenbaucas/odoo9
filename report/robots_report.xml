@@ -1,0 +1,26 @@
+<odoo>
+    <record id="odoo9.robots_report" model="ir.actions.report">
+        <field name="name"> Informe de robots</field>
+        <field name="model">odoo9.robots</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo9.robots_report_view</field>
+        <field name="report_file">odoo9.robots_report</field>
+        <field name="binding_model_id" ref="model_odoo9_robots"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="robots_report_view">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <h1>Robots </h1><br />
+                <t t-foreach="docs" t-as="robots">
+                    <ul>
+                        <li>    Nombre: <span t-field="robots.name" /></li>
+                        <li>    Nave: <span t-field="robots.nave_id" /></li>
+                        <li>    Fabricacion: <span t-field="robots.fabricacion_id" /></li>
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

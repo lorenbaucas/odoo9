@@ -1,0 +1,25 @@
+<odoo>
+    <record id="odoo9.planetas_report" model="ir.actions.report">
+        <field name="name"> Informe de planetas</field>
+        <field name="model">odoo9.planetas</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo9.planetas_report_view</field>
+        <field name="report_file">odoo9.planetas_report</field>
+        <field name="binding_model_id" ref="model_odoo9_planetas"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="planetas_report_view">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <h1>Planetas </h1><br />
+                <t t-foreach="docs" t-as="planetas">
+                    <ul>
+                        <li>    Nombre: <span t-field="planetas.name" /></li>
+                        <li>    Misiones: <span t-field="planetas.misiones_id" /></li>
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>
